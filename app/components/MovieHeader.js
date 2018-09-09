@@ -10,16 +10,16 @@ const MovieHeader = ({ movie }) => (
     <Image style={Styles.mainImage} source={movie.image} />
 
     <View style={Styles.headline}>
-      {/*<View style={Styles.mainHead}>*/}
-      <Text style={Styles.title}>{movie.name}</Text>
-      <View style={Styles.yearHolder}>
-        <Text style={Styles.year}>{movie.year}</Text>
+      <View style={Styles.mainHead}>
+        <Text style={Styles.title}>{movie.name}</Text>
+        <View style={Styles.yearHolder}>
+          <Text style={Styles.year}>{movie.year}</Text>
+        </View>
       </View>
-      {/*</View>*/}
-      {/*<View style={Styles.subHead}>*/}
-      <Text style={Styles.director}>Directed by</Text>
-      <Text style={Styles.itemName}>{movie.director}</Text>
-      {/*</View>*/}
+      <View style={Styles.subHead}>
+        <Text style={Styles.director}>Directed by</Text>
+        <Text style={Styles.itemName}>{movie.director}</Text>
+      </View>
     </View>
   </View>
 );
@@ -35,18 +35,13 @@ const Styles = StyleSheet.create({
   mainHead: {
     paddingBottom: 9,
 
-    //borderColor: 'coral',
-    //borderWidth: 2,
-
-    //flexDirection: 'row',
-    //alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   subHead: {
-    //borderColor: 'purple',
-    //borderWidth: 2,
-    //flexDirection: 'row',
-    //justifyContent: 'space-between',
-    //alignItems: 'baseline',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "baseline",
   },
   mainImage: {
     height: 210,
@@ -65,10 +60,7 @@ const Styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: FontSizes.largeTitle,
 
-    //borderColor: 'red',
-    //borderWidth: 2,
-
-    //flex: 1,
+    flex: 1,
   },
   yearHolder: {
     height: 48,
@@ -77,10 +69,8 @@ const Styles = StyleSheet.create({
     backgroundColor: Colors.highlight,
     overflow: "hidden",
 
-    //borderWidth: 2,
-
-    //justifyContent: 'center',
-    //alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   year: {
     color: "white",
@@ -88,18 +78,12 @@ const Styles = StyleSheet.create({
   },
   director: {
     color: Colors.text,
-
-    //borderColor: 'blue',
-    //borderWidth: 2,
   },
   itemName: {
     color: Colors.text,
     fontWeight: "bold",
 
-    //borderColor: 'green',
-    //borderWidth: 2,
-
-    //textAlign: 'right',
-    //flex: 1,
+    textAlign: "right",
+    flex: 1,
   },
 });

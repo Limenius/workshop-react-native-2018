@@ -7,8 +7,10 @@ import FontSizes from "../styles/fontSizes";
 
 const MainHeader = () => (
   <View style={Styles.logo}>
-    <Text style={Styles.logoTitle}>Travolta</Text>
-    <Text style={Styles.logoSubtitle}>Your movie demo app</Text>
+    <View style={Styles.logoText}>
+      <Text style={Styles.logoTitle}>Travolta</Text>
+      <Text style={Styles.logoSubtitle}>Your movie demo app</Text>
+    </View>
     <Image
       style={Styles.logoImage}
       source={require("../images/john-travolta.png")}
@@ -19,6 +21,15 @@ const MainHeader = () => (
 const Styles = StyleSheet.create({
   logo: {
     backgroundColor: Colors.highlight,
+
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 18,
+  },
+  logoText: {
+    marginRight: 18,
+    alignItems: "flex-end",
   },
   logoTitle: {
     // Uncommenting the next line will throw an error... for now
