@@ -26,5 +26,8 @@
     "tabWidth": 2,
     "printWidth": 80,
     "trailingComma": "all"
+  },
+  "rnpm": {
+    "assets": ["./assets/fonts/"]
   }
 }
