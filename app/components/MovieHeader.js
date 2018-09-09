@@ -62,5 +62,5 @@ const Styles = StyleSheet.create({
   itemName: {
     //color: Colors.text,
     //fontWeight: 'bold',
-  }
+  },
 });
