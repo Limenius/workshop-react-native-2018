@@ -19,7 +19,7 @@ const App = createStackNavigator(
     Home: { screen: MovieList },
     Movie: { screen: Movie },
 
-    // Add the Actor screen
+    Actor: { screen: Actor },
   },
   {
     navigationOptions: {

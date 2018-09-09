@@ -31,7 +31,13 @@ export default class Movie extends Component {
           ListHeaderComponent={<MovieHeader movie={movie} />}
           keyExtractor={item => item}
           renderItem={({ item }) => (
-            <ListItem name={item} image={this.state.actors[item].image} />
+            <TouchableHighlight
+              underlayColor={Colors.subtleAccent}
+              activeOpacity={0.5}
+              onPress={() => navigate("Actor", { name: item })}
+            >
+              <ListItem name={item} image={this.state.actors[item].image} />
+            </TouchableHighlight>
           )}
         />
       </View>
