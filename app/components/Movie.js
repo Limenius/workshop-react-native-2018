@@ -1,16 +1,8 @@
 import React, { Component } from "react";
-import { movies, actors } from "../data";
 import MovieHeader from "./MovieHeader";
 import ListItem from "./ListItem";
-import Colors from "../styles/colors";
 import { baseUrl } from "../constants";
-
-import {
-  View,
-  TouchableHighlight,
-  FlatList,
-  ActivityIndicator,
-} from "react-native";
+import { View, FlatList, ActivityIndicator } from "react-native";
 
 export default class Movie extends Component {
   static navigationOptions = ({ navigation }) => ({
