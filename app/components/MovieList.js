@@ -25,7 +25,8 @@ export default class MovieList extends Component {
       isLoading: true,
       searchText: "",
     };
-    //this.setSearchText = this.setSearchText.bind(this)
+
+    this.setSearchText = this.setSearchText.bind(this);
   }
 
   componentDidMount() {
@@ -43,13 +44,13 @@ export default class MovieList extends Component {
       });
   }
 
-  //setSearchText(text) {
-  //  const regex = new RegExp(text, "gi")
-  //  this.setState({
-  //    searchText: text,
-  //    moviesList: this.state.movies.filter(movie => movie.name.match(regex)),
-  //  })
-  //}
+  setSearchText(text) {
+    const regex = new RegExp(text, "gi");
+    this.setState({
+      searchText: text,
+      moviesList: this.state.movies.filter(movie => movie.name.match(regex)),
+    });
+  }
 
   render() {
     const { navigate } = this.props.navigation;
@@ -66,13 +67,13 @@ export default class MovieList extends Component {
     }
     return (
       <View style={{ flex: 1 }}>
-        {/*<SearchBox
+        <SearchBox
           value={this.state.searchText}
           onChangeText={this.setSearchText}
-        />*/}
+        />
         <FlatList
           style={{ flex: 1 }}
-          data={this.state.movies /*List*/}
+          data={this.state.moviesList}
           ListHeaderComponent={<MainHeader />}
           keyExtractor={item => item.name}
           renderItem={({ item }) => (
