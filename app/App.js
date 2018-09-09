@@ -1,42 +1,62 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
-
-const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-  android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu"
-});
+import {
+  View,
+  ActivityIndicator,
+  Button,
+  Text,
+  Picker,
+  Slider,
+  StyleSheet,
+  Switch,
+  TextInput,
+  Image
+} from "react-native";
+import SimpleComponent from "./components/Simple";
+import MyCounter from "./components/MyCounter";
+import { movies } from "./data";
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Hi there!</Text>
-        <Text style={styles.instructions}>
-          You have completed the setup for the Workshop!
-        </Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+      <View>
+        <Text>Hi there!</Text>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#FFFCF5"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
-  }
-});
+// <Button
+//   onPress={() => alert('Hi')}
+//   title="Learn More"
+//   color="#841584"
+//   accessibilityLabel="This is a sample button"
+// />
+//
+// This image is static
+// <Image style={{height: 100, width: 100}} source={require('./images/pulp-fiction.jpg')}/>
+//
+// This image comes from an uri
+// <Image style={{height: 100, width: 100}} source={{uri: 'https://lorempixel.com/100/100/cats/'}}/>
+//
+// <ActivityIndicator/>
+//
+// <Picker
+//   onValueChange={(itemValue, itemIndex) => alert(`You picked ${itemValue}`)}
+// >
+//   { movies.map(movie => (
+//     <Picker.Item key={movie.name} label={movie.name} value={movie.name} />
+//   ))}
+// </Picker>
+//
+// <Slider/>
+//
+// <Switch/>
+//
+// <TextInput
+//   defaultValue="Type here"
+//   style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+// />
+//
+// <SimpleComponent title="hola" color="red"/>
+//
+// <MyCounter/>
