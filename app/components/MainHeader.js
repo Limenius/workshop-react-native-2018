@@ -17,13 +17,25 @@ const MainHeader = () => (
 );
 
 const Styles = StyleSheet.create({
-  logo: {},
+  logo: {
+    backgroundColor: Colors.highlight,
+  },
   logoTitle: {
     // Uncommenting the next line will throw an error... for now
     //fontFamily: 'Oleo Script',
+
+    fontSize: FontSizes.gigantic,
+    color: Colors.background,
   },
-  logoSubtitle: {},
-  logoImage: {}
+  logoSubtitle: {
+    color: Colors.background,
+    fontWeight: "200",
+    fontSize: FontSizes.subhead,
+  },
+  logoImage: {
+    height: 90,
+    width: 40,
+  },
 });
 
 export default MainHeader;
