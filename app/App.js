@@ -5,7 +5,7 @@ import MovieList from "./components/MovieList";
 import Actor from "./components/Actor";
 
 import { StyleSheet } from "react-native";
-import { createStackNavigator } from "react-navigation";
+import { StackNavigator } from "react-navigation";
 import Colors from "./styles/colors";
 
 const Styles = StyleSheet.create({
@@ -14,11 +14,10 @@ const Styles = StyleSheet.create({
   },
 });
 
-const App = createStackNavigator(
+const App = StackNavigator(
   {
     Home: { screen: MovieList },
     Movie: { screen: Movie },
-
     Actor: { screen: Actor },
   },
   {

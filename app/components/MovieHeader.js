@@ -1,13 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 
-import { Text, View, Image, StyleSheet, Dimensions } from "react-native";
+import {
+  Text,
+  ScrollView,
+  View,
+  Image,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
 
 import Colors from "../styles/colors";
 import FontSizes from "../styles/fontSizes";
+import { baseUrl } from "../constants";
 
 const MovieHeader = ({ movie }) => (
   <View style={Styles.movieHeader}>
-    <Image style={Styles.mainImage} source={movie.image} />
+    <Image
+      style={Styles.mainImage}
+      source={{ uri: baseUrl + "/" + movie.image }}
+    />
 
     <View style={Styles.headline}>
       <View style={Styles.mainHead}>
