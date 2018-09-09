@@ -1,42 +1,33 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
-
-const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-  android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu"
-});
+import { ScrollView, StyleSheet } from "react-native";
+import { movies, actors } from "./data";
+import MovieHeader from "./components/MovieHeader";
+import ListItemActor from "./components/ListItemActor";
+import MainHeader from "./components/MainHeader";
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movie: movies.find(movie => movie.name === "Grease")
+    };
+  }
   render() {
+    const { movie } = this.state;
+    const actorName = movie.actors[0];
+    const actorImage = actors[actorName].image;
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Hi there!</Text>
-        <Text style={styles.instructions}>
-          You have completed the setup for the Workshop!
-        </Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <ScrollView style={Styles.container}>
+        <MovieHeader movie={movie} />
+        <ListItemActor actorName={actorName} actorImage={actorImage} />
+        <MainHeader />
+      </ScrollView>
     );
   }
 }
 
-const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#FFFCF5"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
+    flex: 1
   }
 });
