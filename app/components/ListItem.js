@@ -5,10 +5,10 @@ import { Text, View, Image, StyleSheet } from "react-native";
 import Colors from "../styles/colors";
 import FontSizes from "../styles/fontSizes";
 
-const ListItemActor = ({ actorName, actorImage }) => (
+const ListItem = ({ name, image }) => (
   <View style={Styles.listItem}>
-    <Image source={actorImage} style={Styles.itemImage} />
-    <Text style={Styles.itemName}>{actorName}</Text>
+    <Image source={image} style={Styles.itemImage} />
+    <Text style={Styles.itemName}>{name}</Text>
   </View>
 );
 
@@ -17,6 +17,11 @@ const Styles = StyleSheet.create({
     backgroundColor: "white",
     borderBottomWidth: 1,
     borderBottomColor: Colors.subtleAccent,
+
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingRight: 18,
   },
   itemImage: {
     height: 84,
@@ -28,4 +33,4 @@ const Styles = StyleSheet.create({
   },
 });
 
-export default ListItemActor;
+export default ListItem;
